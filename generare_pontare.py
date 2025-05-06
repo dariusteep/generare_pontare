@@ -83,18 +83,18 @@ def generate_pontaj_dataframe(month: int, year: int):
 
 
 def export_to_csv(df, month, year):
-    file_name = f"pontaj_{month:02d}_{year}.csv"
+    file_name = f"pontaj_{year}_{month:02d}.csv"
     df.to_csv(file_name, index=False, encoding='utf-8-sig')
     print(f"[✔] Fișier CSV salvat: {file_name}")
     return file_name
 
 
 def csv_to_excel(csv_file, month, year):
-    excel_file = f"pontaj_{month:02d}_{year}.xlsx"
+    file_name = f"pontaj_{year}_{month:02d}.xlsx"
     df = pd.read_csv(csv_file, encoding='utf-8-sig')
-    df.to_excel(excel_file, index=False)
-    print(f"[✔] Fișier Excel salvat: {excel_file}")
-    return excel_file
+    df.to_excel(file_name, index=False)
+    print(f"[✔] Fișier Excel salvat: {file_name}")
+    return file_name
 
 
 def excel_to_pdf(excel_file, month, year):
@@ -103,7 +103,7 @@ def excel_to_pdf(excel_file, month, year):
     pdfmetrics.registerFont(TTFont('DejaVuSans', 'fonts/dejavu-sans/DejaVuSans.ttf'))
 
     df = pd.read_excel(excel_file)
-    file_name = f"pontaj_{month:02d}_{year}.pdf"
+    file_name = f"pontaj_{year}_{month:02d}.pdf"
 
     styles = getSampleStyleSheet()
     styleN = styles["Normal"]

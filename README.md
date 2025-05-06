@@ -1,3 +1,5 @@
+# TODO: input the month and year via glider online (gradio or streamlit) and host this on huggingface
+
 # Generare Pontaj
 
 Acest proiect generează automat pontaje lunare în formatele CSV, Excel și PDF, folosind fonturi compatibile cu diacriticele românești.
